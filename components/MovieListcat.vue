@@ -2,8 +2,8 @@
     <div class="list-container">
         <h2 class="list-title">RANGKING LIST</h2>
         <div class="movie-list-container" v-if="movieList.length">
-            <b-row>
-                <b-col class="pad-five" cols="4" lg="3" xl="2" v-for="(value, index) in movieList" :key="index">
+            <b-row style="display: flex; flex-direction: column">
+                <b-col class="pad-five" cols="12" lg="12" xl="12" v-for="(value, index) in movieList" :key="index">
                     <SingleMovieBlockcat :_obj="value" />
                 </b-col>
             </b-row>

@@ -56,6 +56,18 @@
                 </div>
             </div>
         </div>
+        <div class="dis-between">
+            <h2 class="list-title">หนังแนะนำ</h2>
+        </div>
+        <div class="">
+            <swipercate />
+        </div>
+        <div class="">
+            <swipercate />
+        </div>
+        <div class="">
+            <swipercate />
+        </div>
         <div class="loader-container fixed" v-show="showLoader">
             <nuxt-img format="webp" src="/loader.png" alt="loader" />
         </div>

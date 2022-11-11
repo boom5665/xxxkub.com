@@ -1,5 +1,5 @@
-$green-color: #F6BAB5;
-$green-color-darker: rgba(246, 186, 181, 1);
+$pink-color: #F6BAB5;
+$pink-color-darker: rgba(246, 186, 181, 1);
 
 @import "./_font.scss";
 @import "./_header.scss";
@@ -36,7 +36,7 @@ a {
   text-decoration: none;
 
   &:hover {
-    color: $green-color;
+    color: $pink-color;
     text-decoration: none;
     transition: transform 400ms ease, -webkit-transform 400ms ease;
     // transform: scale(1.10);
@@ -45,7 +45,7 @@ a {
 
 ::selection {
   background: #1a191f;
-  color: $green-color-darker;
+  color: $pink-color-darker;
   text-shadow: none;
 }
 
@@ -53,7 +53,7 @@ a {
   font-size: 14px;
   color: #abb7c4;
   font-weight: 500;
-  background-color: $green-color;
+  background-color: $pink-color;
   color: rgb(33, 37, 41);
   padding: 8px;
   border-radius: 9px;
@@ -132,7 +132,7 @@ a {
 
       &.active {
         color: #fff;
-        background: linear-gradient(to bottom, #01fb82 0%, #019b4b 100%);
+        background: linear-gradient(180deg, #F6BAB5 0%, #B88E8B 100%);
       }
 
       &:first-child {
@@ -177,8 +177,9 @@ a {
     padding: 10px 20px;
     font-size: 14px;
     color: #fff;
-    background: linear-gradient(to bottom, #01fb82 0%, #019b4b 100%);
+    background: linear-gradient(180deg, #F6BAB5 0%, #B88E8B 100%);
     border-radius: 2rem;
+    cursor: pointer;
   }
 }
 
@@ -191,7 +192,7 @@ a {
 
 .web-slogan {
   font-size: 28px;
-  color: $green-color;
+  color: $pink-color;
 }
 
 .custom-card-container {
