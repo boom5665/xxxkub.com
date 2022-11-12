@@ -4,7 +4,7 @@
             <Header :_isAV="true" />
             <Banner />
             <div class="text-center">
-                <h2 class="web-title">{{ SEOTitle }}</h2>
+                <h2 class="web-title"><font-awesome-icon icon="fa-solid fa-film" style="color: #F6BAB5;"/> {{ SEOTitle }}</h2>
                 <h3 class="web-slogan">{{ slogan }}</h3>
             </div>
         </b-container>

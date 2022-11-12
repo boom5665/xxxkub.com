@@ -5,9 +5,8 @@
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
             <b-collapse id="nav-collapse" v-model="isCollapseOpen" is-nav>
                 <b-navbar-nav class="menu-list">
-                    <b-nav-item to="/" class="menu-btn">หน้าหลัก</b-nav-item>
-                    <!-- <b-nav-item to="/av" class="menu-btn">หนัง AV</b-nav-item> -->
-                    <b-nav-item @click="showRequestPopup = true" class="menu-btn">ขอหนัง | ติดต่อโฆษณา</b-nav-item>
+                    <b-nav-item to="/" class="menu-btn d-center"><CategoryListnav /></b-nav-item>
+                    <b-nav-item @click="showRequestPopup = true" class="menu-btn"><font-awesome-icon icon="fa-solid fa-comments" /> ขอหนัง | ติดต่อโฆษณา</b-nav-item>
                 </b-navbar-nav>
                 <b-navbar-nav class="ml-auto">
                     <div class="search-container input-container">
@@ -29,20 +28,20 @@
                         <div class="tab-content" v-show="activeTab == 0" key="1">
                             <textarea id="request-detail" class="popup-input" v-model="requestDetail" @keyup="isLetter"></textarea>
                             <div class="text-center">
-                            <div class="submit-btn" @click="saverequestMovie(requestDetail)">ส่งข้อความ</div>
+                                <div class="submit-btn" @click="saverequestMovie(requestDetail)">ส่งข้อความ</div>
                             </div>
                         </div>
                         <div class="tab-content" v-show="activeTab == 1" key="2">
                             <label class="popup-label">ชื่อ สกุล *:</label>
-                           <input type="text" class="popup-input" v-model="contactName" @keyup="isLetter" />
+                            <input type="text" class="popup-input" v-model="contactName" @keyup="isLetter" />
                             <label class="popup-label">อีเมล์ *:</label>
-                          <input type="email" class="popup-input" v-model="contactEmail" @keyup="isEmail" />
+                            <input type="email" class="popup-input" v-model="contactEmail" @keyup="isEmail" />
                             <label class="popup-label">ไอดีไลน์ *:</label>
-                             <input type="text" class="popup-input" v-model="contactLine" @keyup="isline" />
+                            <input type="text" class="popup-input" v-model="contactLine" @keyup="isline" />
                             <label class="popup-label">เบอร์โทรศัพท์</label>
-                         <input type="text" :maxlength="max" class="popup-input" v-model="contactPhone" @keyup="isNum" />
+                            <input type="text" :maxlength="max" class="popup-input" v-model="contactPhone" @keyup="isNum" />
                             <label class="popup-label">รายละเอียด</label>
-                           <input type="text" class="popup-input" style="height: 150px;" v-model="contactDetail" @keyup="isLetter" />
+                            <input type="text" class="popup-input" style="height: 150px" v-model="contactDetail" @keyup="isLetter" />
                             <div class="text-center">
                                 <div class="submit-btn" @click="save()">ส่งข้อความ</div>
                             </div>
@@ -238,14 +237,18 @@ export default {
                 });
         },
         search() {
-            const self = this;
-            this.showLoader = true;
-            let path = "/search";
-            if (this._isAV) path = "/av/search";
-            this.$router.push({ path: path, query: { s: this.searchInput } });
-            setTimeout(() => {
-                self.showLoader = false;
-            }, 1000);
+            if (this.searchInput.trim() != "") {
+                const self = this;
+                this.showLoader = true;
+                let path = "/search";
+                if (this._isAV) path = "/av/search";
+                this.$router.push({ path: path, query: { s: this.searchInput } });
+                setTimeout(() => {
+                    self.showLoader = false;
+                }, 1000);
+            } else {
+                alert("กรุณาพิมชื่อหนัง");
+            }
         },
     },
 };

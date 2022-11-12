@@ -1,6 +1,6 @@
 <template>
     <div class="category-list-container">
-        <div class="category-header">หมวดหมู่</div>
+        <div class="category-header">   <font-awesome-icon icon="fa-solid fa-layer-group" /> หมวดหมู่</div>
         <ul class="category-list">
             <li class="category-single" v-for="(value, index) in types" :key="'type' + index">
                 <nuxt-link :to="'/' + _type + '/type/' + value.name_slug">{{ value.name_th }}</nuxt-link>

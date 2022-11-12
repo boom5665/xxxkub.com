@@ -4,7 +4,7 @@
             <Header />
             <Banner />
             <div class="text-center">
-                <h2 class="web-title">{{ SEOTitle }}</h2>
+                <h2 class="web-title"><font-awesome-icon icon="fa-solid fa-film" style="color: #F6BAB5;"/> {{ SEOTitle }}</h2>
                 <h3 class="web-slogan">{{ slogan }}</h3>
             </div>
             <swiper />
@@ -24,8 +24,13 @@
                         <CategoryList />
                     </div>
                 </b-col>
-                <b-col cols="12" md="9" lg="10">
+                <b-col cols="12" md="8" lg="8">
                     <Nuxt />
+                </b-col>
+                <b-col cols="12" md="3" lg="2">
+                    <div class="d-none d-sm-block">
+                        <MovieListcat />
+                    </div>
                 </b-col>
             </b-row>
             <div class="footer-text">

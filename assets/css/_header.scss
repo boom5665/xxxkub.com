@@ -1,23 +1,126 @@
 #header {
-    background-color: #1a191f;
-    .navbar-dark .navbar-nav .nav-link {
-        font-size: 18px;
-        color: rgba(255, 255, 255, 0.7);
-        transition: color 0.2s;
-        &:hover {
-            color: $pink-color-darker;
-        }
+  background-color: #1a191f;
+
+  .navbar-dark .navbar-nav .nav-link {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.2s;
+
+    &:hover {
+      color: $pink-color-darker;
     }
-    .search-container {
-        width: 220px;
-        @media screen and (max-width: 1199px) and (min-width: 992px) {
-            width: 160px;
-        }
-        .input-submit {
-            transition: color 0.2s;
-            &:hover {
-                color: $pink-color-darker;
-            }
-        }
+  }
+
+  .search-container {
+    width: 220px;
+
+    @media screen and (max-width: 1199px) and (min-width: 992px) {
+      width: 160px;
     }
+
+    .input-submit {
+      transition: color 0.2s;
+
+      &:hover {
+        color: $pink-color-darker;
+      }
+    }
+  }
+}
+
+.dropdown-btn {
+  font-size: 14px;
+  color: #abb7c4;
+  font-weight: 500;
+  background-color: transparent !important;
+  color: rgb(33, 37, 41);
+  padding: 8px;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  color: #fff;
+  text-align: left;
+  list-style: none;
+  background-color: #000;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+
+  @media screen and (max-width: 1024px) {
+    position: absolute !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    position: absolute !important;
+  }
+
+  @media screen and (max-width: 576px) {
+    position: absolute !important;
+  }
+
+  .dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: #fff;
+    text-align: inherit;
+    white-space: nowrap;
+    background-color: transparent;
+    border: 0;
+
+    @media screen and (max-width: 1024px) {
+      background-color: rgb(0 0 0 / 71%);
+    }
+
+    @media screen and (max-width: 768px) {
+      background-color: rgb(0 0 0 / 71%);
+    }
+
+    @media screen and (max-width: 576px) {
+      background-color: rgb(0 0 0 / 71%);
+    }
+
+    &.nuxt-link-exact-active,
+    &:hover {
+      color: #000;
+      background-color: #fff;
+    }
+  }
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  align-items: center;
+}
+
+.d-center{
+  display: flex;
+  align-items: center;
 }
