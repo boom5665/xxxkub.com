@@ -41,7 +41,7 @@
                             <label class="popup-label">เบอร์โทรศัพท์</label>
                             <input type="text" :maxlength="max" class="popup-input" v-model="contactPhone" @keyup="isNum" />
                             <label class="popup-label">รายละเอียด</label>
-                            <input type="text" class="popup-input" style="height: 150px" v-model="contactDetail" @keyup="isLetter" />
+                            <textarea type="text" class="popup-input" style="height: 150px" v-model="contactDetail" @keyup="isLetter" ></textarea>
                             <div class="text-center">
                                 <div class="submit-btn" @click="save()">ส่งข้อความ</div>
                             </div>

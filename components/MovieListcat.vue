@@ -95,7 +95,7 @@ export default {
             const self = this;
             this.loadingList = true;
             this.$axios
-                .$post("av/listmovie", {
+                .$post("av/listmoviepopular", {
                     perpage: 5,
                     page: this.currentPage,
                 })
@@ -113,7 +113,7 @@ export default {
             if (this._isAV) url = "av";
             this.loadingList = true;
             this.$axios
-                .$post(url + "/listmovie", {
+                .$post(url + "/listmoviepopular", {
                     order: "year",
                     orderby: "DESC",
                     types: this._type,
@@ -137,7 +137,7 @@ export default {
             let url = "av";
             if (this._isAV) url = "av";
             this.$axios
-                .$post(url + "/listmovie", {
+                .$post(url + "/listmoviepopular", {
                     order: "year",
                     orderby: "DESC",
                     types: "",
