@@ -24,7 +24,7 @@
                         <CategoryList />
                     </div>
                 </b-col>
-                <b-col cols="12" md="8" lg="8">
+                <b-col cols="12" md="6" lg="8">
                     <Nuxt />
                 </b-col>
                 <b-col cols="12" md="3" lg="2">

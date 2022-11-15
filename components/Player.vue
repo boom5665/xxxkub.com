@@ -28,7 +28,7 @@
                 <div class="btn" v-if="_movieObj.player_link_backup1 != '' && currentSound != 'Backup1'" @click="currentSound = 'Backup1'">ลิ้งค์สำรอง 1 ({{ _movieObj.sound_backup1 }})</div>
                 <div class="btn" v-if="_movieObj.player_link_backup2 != '' && currentSound != 'Backup2'" @click="currentSound = 'Backup2'">ลิ้งค์สำรอง 2 ({{ _movieObj.sound_backup2 }})</div>
             </div>
-            <div class="btn" @click="showReportPopup = true">แจ้งหนังเสีย</div>
+            <div class="btn tab-alert" @click="showReportPopup = true">แจ้งหนังเสีย</div>
         </div>
         <div class="custom-card-container mt-3" v-if="_type == 'series'">
             <div class="custom-card-header">ตอนอื่นๆ</div>
