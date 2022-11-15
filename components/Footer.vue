@@ -1,9 +1,9 @@
 <template>
     <div id="footer">
         <b-container class="h-100">
-            <div class="d-flex align-items-center justify-content-between h-100">
+            <div class="d-flex align-items-center justify-content-between" style="height: max-content;">
                 <nuxt-link to="/">
-                    <nuxt-img format="webp" :src="logo" width="150" height="61" :alt="SEOTitle" />
+                    <nuxt-img format="webp" :src="logo" width="155" height="155" :alt="SEOTitle" />
                 </nuxt-link>
                 <div class="back-to-top" @click="scrollToTop()"><b-icon-arrow-up class="icon" /></div>
             </div>
