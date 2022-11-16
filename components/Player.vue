@@ -1,6 +1,6 @@
 <template>
     <div class="player-page">
-        <div class="preview-header">{{ _isAV ? "ตัวอย่างหนัง:" : "" }} {{ _movieObj.full_name }}</div>
+        <div class="preview-header">{{ _movieObj.full_name }}</div>
         <div class="preview-container">
             <div class="preview-poster">
                 <nuxt-img loading="lazy" format="webp" :src="_movieObj.picture" :alt="_movieObj.full_name" />
@@ -48,7 +48,7 @@
                 </div>
                 <div class="tab-content-list">
                     <div class="tab-content">
-                        <textarea id="request-detail" class="popup-input" v-model="reportDetail" @keyup="isLetter"></textarea>
+                        <textarea id="request-detail" :maxlength="maxtext"  class="popup-input" v-model="reportDetail" @keyup="isLetter"></textarea>
                         <div class="text-center">
                             <div class="submit-btn" @click="reportMovie()">ส่ง</div>
                         </div>
@@ -119,6 +119,7 @@ export default {
             adsVideoList: [],
             isShowAds: true,
             showLoader: false,
+            maxtext: 60,
         };
     },
     computed: {
@@ -150,6 +151,14 @@ export default {
             setTimeout(() => {
                 self.setPlayerUrl();
             }, 100);
+        },
+        reportDetail(val) {
+            var tn = /w+[\{\}:-=_|?&;$%@"<>()#^!\*+,]/;
+            var tw = /^\s+|\s+$/gm;
+            var tb = /^[\{\}:-=_|?&;$%@"<>()#^!\*+,]/;
+            if (tn.test(val) == true || tw.test(val) == true || tb.test(val) == true) {
+                this.reportDetail = "";
+            }
         },
     },
     methods: {

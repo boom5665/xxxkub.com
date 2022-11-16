@@ -26,7 +26,7 @@
                 <div class="tab-content-list">
                     <transition-group name="fade" mode="out-in">
                         <div class="tab-content" v-show="activeTab == 0" key="1">
-                            <textarea id="request-detail" class="popup-input" v-model="requestDetail" @keyup="isLetter"></textarea>
+                            <textarea id="request-detail" :maxlength="maxtext" class="popup-input" v-model="requestDetail" @keyup="isLetter"></textarea>
                             <div class="text-center">
                                 <div class="submit-btn" @click="saverequestMovie(requestDetail)">ส่งข้อความ</div>
                             </div>
@@ -41,7 +41,7 @@
                             <label class="popup-label">เบอร์โทรศัพท์</label>
                             <input type="text" :maxlength="max" class="popup-input" v-model="contactPhone" @keyup="isNum" />
                             <label class="popup-label">รายละเอียด</label>
-                            <textarea type="text" class="popup-input" style="height: 150px" v-model="contactDetail" @keyup="isLetter" ></textarea>
+                            <textarea type="text" :maxlength="maxarea" class="popup-input" style="height: 150px" v-model="contactDetail" @keyup="isLetter"></textarea>
                             <div class="text-center">
                                 <div class="submit-btn" @click="save()">ส่งข้อความ</div>
                             </div>
@@ -81,6 +81,8 @@ export default {
             isCollapseOpen: false,
             max: 10,
             maxserch: 40,
+            maxtext: 60,
+            maxarea: 80,
         };
     },
     computed: {
