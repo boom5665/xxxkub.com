@@ -81,8 +81,8 @@ export default {
             isCollapseOpen: false,
             max: 10,
             maxserch: 40,
-            maxtext: 60,
-            maxarea: 80,
+            maxtext: 50,
+            maxarea: 50,
         };
     },
     computed: {

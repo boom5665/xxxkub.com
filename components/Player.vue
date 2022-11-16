@@ -119,7 +119,7 @@ export default {
             adsVideoList: [],
             isShowAds: true,
             showLoader: false,
-            maxtext: 60,
+            maxtext: 50,
         };
     },
     computed: {
