@@ -2,7 +2,7 @@
     <nuxt-link :to="getPlayUrl(_obj)" class="single-movie-block">
         <div class="poster-container">
             <nuxt-img class="poster" :loading="_fetchMode" :src="_obj.picture" height="220" :alt="_obj.full_name" />
-            <div class="rating" v-show="_obj.ratescore">{{ _obj.ratescore }}</div>
+             <div class="rating" v-show="_obj.ratescore">{{ score ? score : _obj.ratescore }}</div>
             <div class="poster-overlay">
                 <!-- <b-icon-play-circle class="poster-play" /> -->
                 <a class="card__play">
@@ -30,6 +30,20 @@ export default {
             type: String,
             required: false,
             default: "lazy",
+        },
+    },
+    data() {
+        return {
+            score: "",
+        };
+    },
+    mounted() {
+        this.getfixscore();
+    }, 
+
+    methods: {
+        getfixscore() {
+            this.score = Number.parseFloat(this._obj.ratescore).toFixed(0);
         },
     },
 };
