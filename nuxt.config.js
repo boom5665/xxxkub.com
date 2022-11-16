@@ -3,7 +3,7 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   // Global page headers: https://go.nuxtjs.dev/config-head
   server: {
-    port: 8006, // default: 3000
+    port: 8008, // default: 3000
   },
   head: {
     title: "xxxkub",
@@ -40,7 +40,7 @@ export default {
   },
 
   env: {
-    PRODUCTNAME: process.env.PRODUCTNAME || "xxxkub.com",
+    PRODUCTNAME: process.env.PRODUCTNAME || "devmovie",
   },
 
   publicRuntimeConfig: {
@@ -85,7 +85,7 @@ export default {
     baseURL: process.env.BASE_API_URL || "https://dev-movie-api.pirate168.com/api/v1/",
     headers: {
       common: {
-        domain: "xxxkub",
+        domain: "devmovie",
       },
     },
   },
