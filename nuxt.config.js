@@ -85,7 +85,7 @@ export default {
     baseURL: process.env.BASE_API_URL || "https://dev-movie-api.pirate168.com/api/v1/",
     headers: {
       common: {
-        domain: "xxxkub",
+        domain: process.env.DOMAIN || "devmovie",
       },
     },
   },
