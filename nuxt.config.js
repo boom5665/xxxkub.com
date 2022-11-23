@@ -91,7 +91,7 @@ export default {
   },
 
   // sitemap: {
-  //     hostname: "https://www.365fullhd.com",
+  //     hostname: "https://www.xxxkub",
   //     gzip: true,
   //     cacheTime: 1000 * 60 * 60 * 24,
   //     routes: async () => {

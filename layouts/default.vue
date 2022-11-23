@@ -79,7 +79,7 @@ export default {
                 {
                     property: "og:url",
                     name: "og:url",
-                    content: "https://www.365fullhd.com",
+                    content: "https://www.xxxkub",
                 },
                 {
                     property: "og:site_name",
