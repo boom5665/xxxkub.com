@@ -4,9 +4,9 @@
             <nuxt-img class="poster" :loading="_fetchMode" :src="_obj.picture" height="220" :alt="_obj.full_name" />
             <div class="poster-overlay">
                 <!-- <b-icon-play-circle class="poster-play" /> -->
-                <!-- <a class="card__play">
+                <a class="card__play">
                     <nuxt-img class="img-arrow" format="webp" src="/arrow.png" alt="loader" />
-                </a> -->
+                </a>
             </div>
         </div>
         <div class="title">{{ _obj.full_name }}</div>
