@@ -1,26 +1,34 @@
 <template>
     <div class="player-page">
         <div class="preview-header">{{ _movieObj.full_name }}</div>
-        <div class="preview-container">
-            <div class="preview-poster">
-                <nuxt-img loading="lazy" format="webp" :src="_movieObj.picture" :alt="_movieObj.full_name" />
-            </div>
-            <!-- <div class="preview-url">
-                <iframe class="preview-movie" :src="previewUrl" frameborder="0" allowfullscreen></iframe>
-            </div> -->
-            <div class="preview-url">
-                <b-aspect aspect="16:9" class="mb-2">
-                    <div class="iframe-container">
-                        <iframe id="playervideo" :src="playerIframeUrl" allowfullscreen="allowfullscreen" style="width: 100%; height: 100%; border: 0px; overflow: hidden"></iframe>
-                        <AdsVideo :_adsArray="adsVideoList" v-model="isShowAds" v-if="adsVideoList.length > 0 && isShowAds" />
-                    </div>
-                </b-aspect>
-                <div class="player-top-content">{{ _movieObj.year ? "ปีที่ฉาย : " + _movieObj.year : "" }} คะแนน : {{ _movieObj.ratescore }} / {{ _isAV ? 100 : 10 }}</div>
-                <div class="movie-description">
-                    {{ _movieObj.description }}
-                </div>
-            </div>
-        </div>
+
+        <b-aspect aspect="16:5" class="mb-2">
+            <b-container>
+                <b-row style="align-items: flex-start">
+                    <b-col cols="12" lg="6" xl="4" class="dis-play bg-color nopaddding">
+                        <div class="preview-container">
+                            <div class="preview-poster">
+                                <nuxt-img style="max-width: max-content; height: max-content" loading="lazy" format="webp" :src="_movieObj.picture" :alt="_movieObj.full_name" />
+                            </div>
+                        </div>
+                    </b-col>
+                    <b-col cols="12" lg="6" xl="8">
+                        <div class="preview-url">
+                            <b-aspect aspect="16:9" class="mb-2">
+                                <div class="iframe-container">
+                                    <iframe id="playervideo" :src="playerIframeUrl" allowfullscreen="allowfullscreen" style="width: 100%; height: 100%; border: 0px; overflow: hidden"></iframe>
+                                    <AdsVideo :_adsArray="adsVideoList" v-model="isShowAds" v-if="adsVideoList.length > 0 && isShowAds" />
+                                </div>
+                            </b-aspect>
+                            <div class="player-top-content">{{ _movieObj.year ? "ปีที่ฉาย : " + _movieObj.year : "" }} คะแนน : {{ _movieObj.ratescore }} / {{ _isAV ? 100 : 10 }}</div>
+                            <div class="movie-description">
+                                {{ _movieObj.description }}
+                            </div>
+                        </div>
+                    </b-col>
+                </b-row>
+            </b-container>
+        </b-aspect>
 
         <div class="d-flex align-items-center justify-content-between">
             <div class="sound-container">
@@ -48,7 +56,7 @@
                 </div>
                 <div class="tab-content-list">
                     <div class="tab-content">
-                        <textarea id="request-detail" :maxlength="maxtext"  class="popup-input" v-model="reportDetail" @keyup="isLetter"></textarea>
+                        <textarea id="request-detail" :maxlength="maxtext" class="popup-input" v-model="reportDetail" @keyup="isLetter"></textarea>
                         <div class="text-center">
                             <div class="submit-btn" @click="reportMovie()">ส่ง</div>
                         </div>
