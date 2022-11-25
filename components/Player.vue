@@ -6,7 +6,7 @@
             <b-container>
                 <b-row style="align-items: flex-start">
                     <b-col cols="12" lg="6" xl="4" class="dis-play bg-color nopaddding">
-                        <div class="preview-container">
+                        <div class="preview-container" style="display: flex; justify-content: center">
                             <div class="preview-poster">
                                 <nuxt-img style="max-width: max-content; height: max-content" loading="lazy" format="webp" :src="_movieObj.picture" :alt="_movieObj.full_name" />
                             </div>
