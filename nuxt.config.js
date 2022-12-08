@@ -74,7 +74,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
-    // "@nuxtjs/sitemap",
+    "@nuxtjs/sitemap",
     "@nuxt/image",
     "bootstrap-vue/nuxt",
     "@nuxtjs/robots",
@@ -90,37 +90,37 @@ export default {
     },
   },
 
-  // sitemap: {
-  //     hostname: "https://www.xxxkub",
-  //     gzip: true,
-  //     cacheTime: 1000 * 60 * 60 * 24,
-  //     routes: async () => {
-  //         const response = await axios.post(
-  //             (process.env.BASE_API_URL || "https://dev-movie-api.pirate168.com/api/v1/") + "gen-sitemap-rawdata",
-  //             {},
-  //             {
-  //                 headers: {
-  //                     domain: "ruaymovie",
-  //                 },
-  //             }
-  //         );
-  //         return response.data.result.map((x) => {
-  //             return {
-  //                 url: x.loc,
-  //                 priority: x.priority,
-  //             };
-  //         });
-  //     },
-  // },
+sitemap: {
+        hostname: "https://xxxkub.com",
+        gzip: true,
+        cacheTime: 1000 * 60 * 60 * 24,
+        routes: async () => {
+            const response = await axios.post(
+                (process.env.BASE_API_URL || "https://dev-movie-api.pirate168.com/api/v1/") + "gen-sitemap-rawdata",
+                {},
+                {
+                    headers: {
+                        domain: "xxxkub",
+                    },
+                }
+            );
+            return response.data.result.map((x) => {
+                return {
+                    url: x.loc,
+                    priority: x.priority,
+                };
+            });
+        },
+    },
 
   robots: {
     UserAgent: "*",
     Allow: "/",
-    Sitemap: "https://www.ruaymovie.com/sitemap.xml"
+    Sitemap: "https://xxxkub.com/sitemap.xml"
   },
 
   bootstrapVue: {
-    // Install the `IconsPlugin` plugin (in addition to `BootstrapVue` plugin)
+    // Install the IconsPlugin plugin (in addition to BootstrapVue plugin)
     icons: true,
   },
 
