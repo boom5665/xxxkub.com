@@ -1,6 +1,6 @@
 <template>
     <div class="player-page">
-        <div class="preview-header">{{ _movieObj.full_name }}</div>
+        <div class="preview-header"><h1>{{ _movieObj.full_name }}</h1></div>
 
         <b-aspect aspect="16:5" class="mb-2">
             <b-container>

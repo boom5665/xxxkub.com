@@ -4,8 +4,8 @@
             <Header />
             <Banner />
             <div class="text-center">
-                <h2 class="web-title"><font-awesome-icon icon="fa-solid fa-film" style="color: #F6BAB5;" /> {{ SEOTitle }}</h2>
-                <h3 class="web-slogan">{{ slogan }}</h3>
+                <h1 class="web-title"><font-awesome-icon icon="fa-solid fa-film" style="color: #F6BAB5;" /> {{ SEOTitle }}</h1>
+                <p class="web-slogan">{{ slogan }}</p>
             </div>
             <swiper />
         </b-container>

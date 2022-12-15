@@ -1,6 +1,6 @@
 <template>
     <div class="list-container">
-        <h2 class="list-title list-title-rang">RANKING LIST</h2>
+        <h3 class="list-title list-title-rang">RANKING LIST</h3>
         <div class="movie-list-container" v-if="movieList.length">
             <b-row style="display: flex; flex-direction: column">
                 <b-col class="pad-five" cols="12" lg="12" xl="12" v-for="(value, index) in movieList" :key="index">
