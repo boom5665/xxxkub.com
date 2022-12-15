@@ -16,7 +16,7 @@ export default {
     head() {
         return {
             titleTemplate: (titleChunk) => {
-                return titleChunk ? `${titleChunk} - ` + this.typeObj.name_th : this.typeObj.name_th;
+                return titleChunk ? this.typeObj.name_th + ` | ${titleChunk} ` : this.typeObj.name_th;
             },
         };
     },

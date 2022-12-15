@@ -84,7 +84,7 @@ export default {
                 {
                     property: "og:site_name",
                     name: "og:site_name",
-                    content: "365fullhd",
+                    content: "xxxkub",
                 },
                 {
                     property: "og:image",

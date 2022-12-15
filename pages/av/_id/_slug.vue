@@ -18,7 +18,7 @@ export default {
     head() {
         return {
             titleTemplate: (titleChunk) => {
-                return titleChunk ? `${titleChunk} - ` + this.movieObj.full_name : this.movieObj.full_name;
+                return titleChunk ? this.movieObj.full_name + ` | ${titleChunk}  `   : this.movieObj.full_name;
             },
         };
     },
