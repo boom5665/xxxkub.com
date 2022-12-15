@@ -1,10 +1,14 @@
 <template>
     <div>
-       <h2>หนังยอดนิยม</h2>
-        <vue-glide   :breakpoints="{ 400: { perView: 1 }, 700: { perView: 2 }, 1000: { perView: 3 }, 1200: { perView: 4 } }" v-model="active" v-bind="carouselOptions" v-if="movieList.length > 0">
-            <template slot="control" >
-                <button  class="arrow-left" data-glide-dir="<"><div class="mr-3" ><b-icon-arrow-left style="width: 24px; height: 36px" aria-hidden="true" /></div></button>
-                <button class="arrow-right"  data-glide-dir=">"><div ><b-icon-arrow-right style="width: 24px; height: 36px" aria-hidden="true" /></div></button>
+        <h2>หนังยอดนิยม</h2>
+        <vue-glide :breakpoints="{ 400: { perView: 1 }, 700: { perView: 2 }, 1000: { perView: 3 }, 1200: { perView: 4 } }" v-model="active" v-bind="carouselOptions" v-if="movieList.length > 0">
+            <template slot="control">
+                <button class="arrow-left" data-glide-dir="<">
+                    <div class="mr-3"><b-icon-arrow-left style="width: 24px; height: 36px" aria-hidden="true" /></div>
+                </button>
+                <button class="arrow-right" data-glide-dir=">">
+                    <div><b-icon-arrow-right style="width: 24px; height: 36px" aria-hidden="true" /></div>
+                </button>
             </template>
             <vue-glide-slide v-for="(value, index) in movieList" :key="index" class="padding"> <SingleMovieBlockswiper :_obj="value" /></vue-glide-slide>
         </vue-glide>
@@ -37,7 +41,10 @@ export default {
             const self = this;
             this.loadingList = true;
             this.$axios
-                .$post("av/listmovie", {
+                .$post("av/listmoviesimilar", {
+                    category: [],
+                    perpage: 30,
+                    page: 1,
                 })
                 .then(function (response) {
                     if (response.code == 200) {
@@ -78,9 +85,8 @@ export default {
     top: 40%;
 }
 
-.padding{
-  padding-top: 40px;
-  padding-bottom: 30px;
+.padding {
+    padding-top: 40px;
+    padding-bottom: 30px;
 }
-
 </style>

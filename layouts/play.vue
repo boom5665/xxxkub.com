@@ -42,44 +42,44 @@ import { mapState } from "vuex";
 export default {
     head() {
         return {
-            title: this.SEOTitle,
-            meta: [
-                {
-                    hid: "description",
-                    name: "description",
-                    content: this.SEODescription,
-                },
-                {
-                    name: "keywords",
-                    content: ["ดูหนัง", "ดูหนังออนไลน์", "ดูซีรี่ย์"],
-                },
-                {
-                    property: "og:title",
-                    name: "og:title",
-                    content: this.SEOTitle,
-                },
-                {
-                    property: "og:description",
-                    name: "og:description",
-                    content: this.SEODescription || "mugquwas open graph meta description",
-                },
-                {
-                    property: "og:url",
-                    name: "og:url",
-                    content: "https://www.xxxkub",
-                },
-                {
-                    property: "og:site_name",
-                    name: "og:site_name",
-                    content: "365fullhd",
-                },
-                {
-                    property: "og:image",
-                    name: "og:image",
-                    content: this.logo,
-                },
-            ],
-            link: [{ rel: "icon", type: "image/x-icon", href: this.icon }],
+            // title: this.SEOTitle,
+            // meta: [
+            //     {
+            //         hid: "description",
+            //         name: "description",
+            //         content: this.SEODescription,
+            //     },
+            //     {
+            //         name: "keywords",
+            //         content: ["ดูหนัง", "ดูหนังออนไลน์", "ดูซีรี่ย์"],
+            //     },
+            //     {
+            //         property: "og:title",
+            //         name: "og:title",
+            //         content: this.SEOTitle,
+            //     },
+            //     {
+            //         property: "og:description",
+            //         name: "og:description",
+            //         content: this.SEODescription || "mugquwas open graph meta description",
+            //     },
+            //     {
+            //         property: "og:url",
+            //         name: "og:url",
+            //         content: "https://www.xxxkub",
+            //     },
+            //     {
+            //         property: "og:site_name",
+            //         name: "og:site_name",
+            //         content: "xxxkub",
+            //     },
+            //     {
+            //         property: "og:image",
+            //         name: "og:image",
+            //         content: this.logo,
+            //     },
+            // ],
+            // link: [{ rel: "icon", type: "image/x-icon", href: this.icon }],
         };
     },
     data() {

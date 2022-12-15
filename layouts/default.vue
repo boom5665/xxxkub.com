@@ -4,7 +4,7 @@
             <Header />
             <Banner />
             <div class="text-center">
-                <h1 class="web-title"><font-awesome-icon icon="fa-solid fa-film" style="color: #F6BAB5;" /> {{ SEOTitle }}</h1>
+                <h1 class="web-title"><font-awesome-icon icon="fa-solid fa-film" style="color: #f6bab5" /> {{ SEOTitle }}</h1>
                 <p class="web-slogan">{{ slogan }}</p>
             </div>
             <swiper />
@@ -36,8 +36,10 @@
             <div class="footer-text">
                 <div class="footer-title">{{ slogan }}</div>
                 <div class="footer-content" v-html="descriptionFooter"></div>
+                <!-- {{ metaseo }} -->
             </div>
         </b-container>
+
         <Footer />
         <div class="footer-ads-container" v-show="showAds" v-if="adsBottom.length > 0">
             <div class="inner-container">
@@ -60,7 +62,7 @@ export default {
                 {
                     hid: "description",
                     name: "description",
-                    content: this.SEODescription,
+                    content: this.SEODescription.replace("หมวดหมู่ {{category}} ", ""),
                 },
                 {
                     name: "keywords",
@@ -74,7 +76,7 @@ export default {
                 {
                     property: "og:description",
                     name: "og:description",
-                    content: this.SEODescription || "mugquwas open graph meta description",
+                    content: this.SEODescription.replace("หมวดหมู่ {{category}} ", "") || "mugquwas open graph meta description",
                 },
                 {
                     property: "og:url",
@@ -84,7 +86,7 @@ export default {
                 {
                     property: "og:site_name",
                     name: "og:site_name",
-                    content: "365fullhd",
+                    content: "xxxkub",
                 },
                 {
                     property: "og:image",
@@ -117,13 +119,18 @@ export default {
             adsBottom: (state) => state.adsBottom,
         }),
     },
-    mounted() {},
+    mounted() {
+
+    },
     methods: {
+
         async getMenuMovies() {
             const data = await this.$axios.$get("movie/listtypeandcate");
             if (data.code == 200) {
                 this.menuType = data.result.Listdata_type;
                 this.menuCategory = data.result.Listdata_cate;
+                this.metaseo = this.SEODescription.replace("{{category}}", "monkey");
+                console.log(this.metaseo);
             }
         },
     },
