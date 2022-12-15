@@ -25,7 +25,7 @@ export default {
                 {
                     hid: "description",
                     name: "description",
-                    content: this.SEODescription.replace("{{category}}", this.movieObj.full_name),
+                    content:  this.movieObj.description,
                 },
                 {
                     name: "keywords",
@@ -39,7 +39,7 @@ export default {
                 {
                     property: "og:description",
                     name: "og:description",
-                    content: this.SEODescription.replace("{{category}}", this.movieObj.full_name) || "mugquwas open graph meta description",
+                    content: this.movieObj.description || "mugquwas open graph meta description",
                 },
                 {
                     property: "og:url",
